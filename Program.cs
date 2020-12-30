@@ -26,14 +26,19 @@ namespace cnblogs_x_sephora
             Console.WriteLine();
 
             var offers = new[] { 圣诞礼单Part1, 圣诞礼单Part2, 圣诞礼单Part3, 圣诞礼单Part4 };
-
-            var offer = offers[new Random().Next(offers.Length - 1)];
-            Console.WriteLine(offer.Title);
-            Console.WriteLine(offer.Subtitle);
-            foreach (var product in offer.Products)
+            foreach (var offer in offers)
             {
-                Console.WriteLine(product);
+                Console.WriteLine(offer.Title);
+                Console.WriteLine(offer.Subtitle);
+                foreach (var product in offer.Products)
+                {
+                    Console.WriteLine(product.Brand);
+                    Console.WriteLine(product.ProductName);
+                }
             }
+            //var offer = offers[new Random().Next(offers.Length - 1)];
+
+            
         }
 
         private static dynamic 圣诞礼单Part1 => new
@@ -42,12 +47,11 @@ namespace cnblogs_x_sephora
             Subtitle = "热推力荐的挚爱之礼，为你开启礼赠灵感。应景又应季、色彩感满分的闪耀美礼，为节日增添气氛，更为TA献上温馨祝福！",
             Products = new[]
             {
-                (Brand: "GUERLAIN", ProductName: "娇兰帝皇蜂姿抗皱赋源眼霜套装"),
-                (Brand: "GIVENCHY", ProductName: "纪梵希高定香榭唇膏（星钻限量版）"),
-                (Brand: "SEB", ProductName: "丝芙兰狂野愿望彩妆盘"),
-                (Brand: "Dior", ProductName: "克丽丝汀迪奥真我香氛节日套装"),
-                (Brand: "Wei", ProductName: "蔚蓝之美沁透滋养面膜套装")
-
+                new { Brand = "GUERLAIN", ProductName = "娇兰帝皇蜂姿抗皱赋源眼霜套装" },
+                new { Brand = "GIVENCHY", ProductName = "纪梵希高定香榭唇膏（星钻限量版）" },
+                new { Brand = "SEB", ProductName = "丝芙兰狂野愿望彩妆盘" },
+                new { Brand = "Dior", ProductName = "克丽丝汀迪奥真我香氛节日套装" },
+                new { Brand = "Wei", ProductName = "蔚蓝之美沁透滋养面膜套装" }
             }
         };
 
@@ -57,10 +61,11 @@ namespace cnblogs_x_sephora
             Subtitle = "无论是闺蜜还是爱人，都值得以经典致彼此间的长久默契——典藏大牌美礼，为她带去不期而遇的惊喜！",
             Products = new[]
             {
-                (Brand: "shiseido", ProductName: "资生堂新红妍肌活精华露30ml优惠套组"),
-                (Brand: "SK-II", ProductName: "SK-II 晶透赋能礼盒"),
-                (Brand: "Dior", ProductName: "克丽丝汀迪奥烈焰蓝金唇膏999（ 全新上市）"),
-                (Brand: "ADF", ProductName: "蔻依仙境花园系列香氛-木兰诗语惠选套装")
+                //"shiseido", "资生堂新红妍肌活精华露30ml优惠套组"
+                new { Brand="shiseido", ProductName="资生堂新红妍肌活精华露30ml优惠套组" },
+               // (Brand: "SK-II", ProductName: "SK-II 晶透赋能礼盒"),
+               // (Brand: "Dior", ProductName: "克丽丝汀迪奥烈焰蓝金唇膏999（ 全新上市）"),
+               // (Brand: "ADF", ProductName: "蔻依仙境花园系列香氛-木兰诗语惠选套装")
             }
         };
 
@@ -70,10 +75,11 @@ namespace cnblogs_x_sephora
             Subtitle = "了解你的喜好、懂得你心思的，总是自己——送给自己的年末节日礼，是特别的、真正适合的。抛开大众所向，将“真爱”小众系列收入囊中！",
             Products = new[]
             {
-                (Brand: "ELEMIS", ProductName: "海洋胶原经典「小黄罐」卸妆膏礼盒"),
-                (Brand: "SEB", ProductName: "丝芙兰狂野愿望 身体礼盒"),
-                (Brand: "Marie Dalgar Color studio", ProductName: "玛丽黛佳色彩工作室醉恋复古多功能眼彩盘 微醺甜茶"),
-                (Brand: "AC", ProductName: "欧珑逐爱柑香圣诞夜礼盒")
+                new { Brand="ELEMIS", ProductName="海洋胶原经典「小黄罐」卸妆膏礼盒" }
+               // (Brand: "ELEMIS", ProductName: "海洋胶原经典「小黄罐」卸妆膏礼盒"),
+               // (Brand: "SEB", ProductName: "丝芙兰狂野愿望 身体礼盒"),
+               // (Brand: "Marie Dalgar Color studio", ProductName: "玛丽黛佳色彩工作室醉恋复古多功能眼彩盘 微醺甜茶"),
+              //  (Brand: "AC", ProductName: "欧珑逐爱柑香圣诞夜礼盒")
             }
         };
 
@@ -83,10 +89,10 @@ namespace cnblogs_x_sephora
             Subtitle = "无需花哨，他常用的或是易忽略的好物，作为贴心问候，带给他呵护与陪伴。实用的护肤香氛礼，为他驻守魅力阵地！",
             Products = new[]
             {
-                (Brand: "LOEWE", ProductName: "罗意威第7乐章男款淡香水"),
-                (Brand: "MOSCHINO", ProductName: "默斯奇诺熊男友香水"),
-                (Brand: "BIOTHERM", ProductName: "碧欧泉蓝钻滋养奢宠惠选套组"),
-                (Brand: "LAB SERIES", ProductName: "朗仕熬夜精华乳惠选套组")
+                new { Brand="LOEWE", ProductName="罗意威第7乐章男款淡香水" }
+               // (Brand: "MOSCHINO", ProductName: "默斯奇诺熊男友香水"),
+              //  (Brand: "BIOTHERM", ProductName: "碧欧泉蓝钻滋养奢宠惠选套组"),
+              //  (Brand: "LAB SERIES", ProductName: "朗仕熬夜精华乳惠选套组")
             }
         };
     }
